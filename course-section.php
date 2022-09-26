@@ -1,3 +1,6 @@
+<?php
+require_once("header.php"); ?>
+
 <body>
     <h1>Sections</h1>
 <table class="table table-striped">
@@ -49,3 +52,6 @@ $conn->close();
 ?>
   </tbody>
     </table>
+
+    <?php
+    require_once("footer.php"); ?>
