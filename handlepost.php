@@ -4,7 +4,7 @@
   Welcome <?php echo $_POST["name"]; ?><br>
 Your email address is: <?php echo $_POST["email"]; ?>
   
-  <a class"btn btn-primary" href="page2.html" role="button">Page 2</a>
+  <a class"btn btn-primary" href="instructors.php" role="button">Instructors</a>
   
   
 
