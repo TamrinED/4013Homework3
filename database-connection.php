@@ -1,6 +1,6 @@
 <?php
 require_once("header.php"); ?>
-
+<body>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -42,13 +42,7 @@ $conn->close();
 ?>
   </tbody>
     </table>
-    <h1>Hello, world!</h1>
-    <form action="handlepost.php" method="get">
-Name: <input type="text" name="Instructor"><br>
-Course: <input type="text" name="Course"><br>
-<input type="submit">
-</form>
-    
+</body>
     
  <?php
 require_once("footer.php"); ?>
