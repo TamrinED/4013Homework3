@@ -1,6 +1,7 @@
 <?php
 require_once("header.php");?>
-  
+
+<body>  
 <h1>Courses</h1>
 <table class="table table-striped">
   <thead>
