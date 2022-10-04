@@ -1,10 +1,48 @@
 <?php require_once("header.php"); ?>
 <h1>My Website</h1>
 
-<form action="handlepost.php" method="post">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
+<body>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+$servername = "tamrined@localhost";
+$username = "tamrined_suser";
+$password = "(_y)XTDI)NmV";
+$dbname = "tamrined_4013Homework3";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT instructor_id, instructor_name from instructor";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+?>
+  <tr>
+    <td><?=$row["instructor_id"]?></td>
+    <td><?=$row["instructor_name"]?></td>
+  </tr>
+<?php
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+  </tbody>
+    </table>
+</body>
 
 <?php require_once("footer.php"); ?>
