@@ -1,12 +1,13 @@
 <?php require_once("header.php"); ?>
-<h1>My Website</h1>
+<h1>My Database Connection</h1>
 
 <body>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
+      <th>First Name</th>
+      <th>Last Name</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT instructor_id, instructor_name from instructor";
+$sql = "SELECT InstructorID, FirstName, LastName FROM Instructor";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -31,8 +32,9 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["instructor_id"]?></td>
-    <td><?=$row["instructor_name"]?></td>
+    <td><?=$row["InstructorID"]?></td>
+    <td><?=$row["FirstName"]?></td>
+    <td><?=$row["LastName"]?></td>
   </tr>
 <?php
   }
