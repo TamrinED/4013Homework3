@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <?php
-$servername = "@localhost";
+$servername = "tamrined@localhost";
 $username = "tamrined_suser";
 $password = "(_y)XTDI)NmV";
 $dbname = "tamrined_4013Homework3";
