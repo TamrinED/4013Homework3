@@ -1,5 +1,4 @@
-<?php
-require_once("header.php"); ?>
+<?php require_once("header.php"); ?>
 
   <body>
     <h1>Sections</h1>
@@ -9,13 +8,13 @@ require_once("header.php"); ?>
       <th>ID</th>
       <th>Prefix</th>
       <th>Number</th>
-      <th>Section</th>
+      <th>Course</th>
       <th>Instructor</th>
     </tr>
   </thead>
   <tbody>
     <?php
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "tamrined_suser";
 $password = "(_y)XTDI)NmV";
 $dbname = "tamrined_4013Homework3";
@@ -28,7 +27,8 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['id'];
 //echo $iid;
-$sql = "select section_id, section_number, i.instructor_name, c.prefix, c.number from section s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where i.instructor_id=" . $iid;
+$sql = "SELECT SectionID, Section.Number, Instructor.InstructorID, , c.number 
+FROM section s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where i.instructor_id=" . $iid;
 //echo $sql;
     $result = $conn->query($sql);
 
@@ -53,5 +53,4 @@ $conn->close();
   </tbody>
     </table>
     
-    <?php
-    require_once("footer.php"); ?>
+    <?php require_once("footer.php"); ?>
