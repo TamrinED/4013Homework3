@@ -26,7 +26,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$cid = $_POST['courseid'];
+$cid = $_POST['CourseID'];
 //echo $iid;
 $sql = "SELECT SectionID, Section.Prefix, Section.Number, CourseID, InstructorID 
 FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=" . $cid;
@@ -39,8 +39,8 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["SectionID"]?></td>
-    <td><?=$row["Prefix"]?></td>
-    <td><?=$row["Number"]?></td>
+    <td><?=$row["Section.Prefix"]?></td>
+    <td><?=$row["Section.Number"]?></td>
     <td><?=$row["CourseID"]?></td>
     <td><?=$row["InstructorID"]?></td>
   </tr>
