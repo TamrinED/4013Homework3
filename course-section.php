@@ -26,10 +26,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$cid = $_POST['sectionid'];
+$cid = $_POST['courseid'];
 //echo $iid;
-$sql = "SELECT SectionID, InstructorID, Section.Prefix, Section.Number, CourseID 
-FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=" . $cid;
+$sql = "SELECT * 
+FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=s.courseid" . $cid;
 //echo $sql;
     $result = $conn->query($sql);
 
