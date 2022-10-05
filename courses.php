@@ -24,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM course";
+$sql = "SELECT * FROM Course";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -32,13 +32,13 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["course_id"]?></td>
-    <td><?=$row["prefix"]?></td>
-    <td><?=$row["number"]?></td>
+    <td><?=$row["CourseID"]?></td>
+    <td><?=$row["Prefix"]?></td>
+    <td><?=$row["Number"]?></td>
     
     
       <form method="post" action="course-section.php">
-        <input type="hidden" name="id" value="<?=$row["course_id"]?>" />
+        <input type="hidden" name="id" value="<?=$row["CourseID"]?>" />
         <input type="submit" value="Sections" />
       </form>
     </td>
