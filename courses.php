@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
     
     
       <form method="post" action="course-section.php">
-        <input type="hidden" name="CourseID" value="<?=$row["Section.CourseID"]?>" />
+        <input type="hidden" name="CourseID" value="<?=$row["Course.CourseID"]?>" />
         <input type="submit" value="Sections" />
       </form>
     </td>
