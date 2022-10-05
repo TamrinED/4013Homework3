@@ -38,11 +38,11 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["sectionid"]?></td>
-    <td><?=$row["prefix"]?></td>
-    <td><?=$row["number"]?></td>
-    <td><?=$row["courseid"]?></td>
-    <td><?=$row["instructorid"]?></td>
+    <td><?=$row["SectionID"]?></td>
+    <td><?=$row["Prefix"]?></td>
+    <td><?=$row["Number"]?></td>
+    <td><?=$row["CourseID"]?></td>
+    <td><?=$row["InstructorID"]?></td>
   </tr>
 <?php
   }
