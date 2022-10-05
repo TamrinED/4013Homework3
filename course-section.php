@@ -6,16 +6,16 @@ require_once("header.php"); ?>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>SectionID</th>
       <th>Prefix</th>
       <th>Number</th>
-      <th>Section</th>
-      <th>Instructor</th>
+      <th>CourseID</th>
+      <th>InstructorID</th>
     </tr>
   </thead>
   <tbody>
     <?php
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "tamrined_suser";
 $password = "(_y)XTDI)NmV";
 $dbname = "tamrined_4013Homework3";
@@ -28,7 +28,8 @@ if ($conn->connect_error) {
 }
 $cid = $_POST['id'];
 //echo $iid;
-$sql = "select section_id, section_number, i.instructor_name, c.prefix, c.number from section s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where c.course_id=" . $cid;
+$sql = "SELECT SectionID, InstructorID, Section.Prefix, Section.Number, CourseID 
+FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=" . $cid;
 //echo $sql;
     $result = $conn->query($sql);
 
@@ -37,11 +38,11 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["section_id"]?></td>
+    <td><?=$row["sectionid"]?></td>
     <td><?=$row["prefix"]?></td>
     <td><?=$row["number"]?></td>
-    <td><?=$row["section_number"]?></td>
-    <td><?=$row["instructor_name"]?></td>
+    <td><?=$row["courseid"]?></td>
+    <td><?=$row["instructorid"]?></td>
   </tr>
 <?php
   }
@@ -53,5 +54,4 @@ $conn->close();
   </tbody>
     </table>
 
-    <?php
-    require_once("footer.php"); ?>
+    <?php require_once("footer.php"); ?>
