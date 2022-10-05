@@ -1,5 +1,4 @@
-<?php
-require_once("header.php");?>
+<?php require_once("header.php");?>
 
 <body>  
 <h1>Courses</h1>
