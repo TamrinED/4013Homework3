@@ -5,16 +5,14 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>CourseID</th>
       <th>Prefix</th>
       <th>Number</th>
-      <th>Description</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <?php
-$servername = "localhost";
+$servername = "localhost:3306";
 $username = "tamrined_suser";
 $password = "(_y)XTDI)NmV";
 $dbname = "tamrined_4013Homework3";
@@ -26,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * from course";
+$sql = "SELECT * FROM course";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,8 +35,8 @@ if ($result->num_rows > 0) {
     <td><?=$row["course_id"]?></td>
     <td><?=$row["prefix"]?></td>
     <td><?=$row["number"]?></td>
-    <td><?=$row["description"]?></td>
-    <td>
+    
+    
       <form method="post" action="course-section.php">
         <input type="hidden" name="id" value="<?=$row["course_id"]?>" />
         <input type="submit" value="Sections" />
@@ -55,5 +53,4 @@ $conn->close();
   </tbody>
     </table>
 
-<?php
-require_once("footer.php"); ?>
+<?php require_once("footer.php"); ?>
