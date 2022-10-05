@@ -28,8 +28,8 @@ if ($conn->connect_error) {
 }
 $cid = $_POST['sectionid'];
 //echo $iid;
-$sql = "SELECT * 
-FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=s.courseid" . $cid;
+$sql = "SELECT SectionID, Section.Prefix, Section.Number, CourseID, InstructorID 
+FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=" . $cid;
 //echo $sql;
     $result = $conn->query($sql);
 
