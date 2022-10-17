@@ -28,8 +28,8 @@ if ($conn->connect_error) {
 
 //echo $iid;
 $sql = "SELECT *
-FROM course ";
-//WHERE c.InstructorID=i.InstructorID";
+FROM Course ";
+//WHERE c.InstructorID=i.InstructorID"
 //echo $sql;
     $result = $conn->query($sql);
 
