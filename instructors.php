@@ -33,7 +33,8 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["InstructorID"]?></td>
-    <td><a href="instructor-section.php?id=<?=$row["InstructorID"]?>"><?=$row["LastName"]?></a></td>
+    <td><a href="instructor-section.php?id=<?=$row["InstructorID"]?>"><?=$row["FirstName"]?></a></td>
+    <td><?=$row["LastName"]?></td>
   </tr>
 <?php
   }
