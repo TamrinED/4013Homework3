@@ -37,10 +37,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["sectionid"]?></td>
-    <td><?=$row["prefix"]?></td>
-    <td><?=$row["number"]?></td>
-    <td><?=$row["courseid"]?></td>
+    <td><?=$row["SectionID"]?></td>
+    <td><?=$row["Section.Prefix"]?></td>
+    <td><?=$row["Section.Number"]?></td>
+    <td><?=$row["Section.CourseID"]?></td>
   </tr>
 <?php
   }
