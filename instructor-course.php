@@ -39,9 +39,9 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["CourseID"]?></td>
-    <td><?=$row["Course.Prefix"]?></td>
-    <td><?=$row["Course.Number"]?></td>
-    <td><?=$row["Course.InstructorID"]?></td>
+    <td><?=$row["Prefix"]?></td>
+    <td><?=$row["Number"]?></td>
+    <td><?=$row["InstructorID"]?></td>
   </tr>
 <?php
   }
