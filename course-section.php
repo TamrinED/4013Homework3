@@ -27,7 +27,7 @@ if ($conn->connect_error) {
 //$iid = $_GET['id'];
 //echo $iid;
 $sql = "SELECT *
-FROM section";
+FROM Section";
 
 //echo $sql;
     $result = $conn->query($sql);
