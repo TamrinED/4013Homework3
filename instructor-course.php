@@ -2,7 +2,7 @@
 require_once("header.php"); ?>
 
 <body>
-    <h1>Sections</h1>
+    <h1>Courses</h1>
 <table class="table table-striped">
   <thead>
     <tr>
