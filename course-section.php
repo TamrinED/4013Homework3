@@ -38,9 +38,9 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["SectionID"]?></td>
-    <td><?=$row["Section.Prefix"]?></td>
-    <td><?=$row["Section.Number"]?></td>
-    <td><?=$row["Section.CourseID"]?></td>
+    <td><?=$row["Section_Prefix"]?></td>
+    <td><?=$row["Section_Number"]?></td>
+    <td><?=$row["Section_CourseID"]?></td>
   </tr>
 <?php
   }
