@@ -32,12 +32,12 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["CourseID"]?></td>
-    <td><?=$row["Prefix"]?></td>
-    <td><?=$row["Number"]?></td>
+    <td><?=$row["Course.CourseID"]?></td>
+    <td><?=$row["Course.Prefix"]?></td>
+    <td><?=$row["Course.Number"]?></td>
     
       <form method="post" action="course-section.php">
-        <input type="hidden" name="CourseID" value="<?=$row["CourseID"]?>" />
+        <input type="hidden" name="CourseID" value="<?=$row["Course.CourseID"]?>" />
         <input type="submit" value="Sections" />
       </form>
     </td>
