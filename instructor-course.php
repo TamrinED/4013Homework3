@@ -6,10 +6,9 @@ require_once("header.php"); ?>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>SectionID</th>
+      <th>CourseID</th>
       <th>Prefix</th>
       <th>Number</th>
-      <th>CourseID</th>
       <th>InstructorID</th>
     </tr>
   </thead>
@@ -26,10 +25,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$cid = $_POST['course.CourseID'];
+$cid = $_POST['Instructor.InstructorID'];
 //echo $iid;
-$sql = "SELECT SectionID, Section.Prefix, Section.Number, CourseID, InstructorID 
-FROM section s join instructor i on i.instructorid = s.instructorid join course c on c.courseid = s.courseid where c.courseid=" . $cid;
+$sql = "SELECT CourseID, Course.Prefix, Course.Number, InstructorID 
+FROM course c join instructor i on i.instructorid = c.instructorid join section s on s.courseid = s.courseid 
+WHERE c.InstructorID=" . $cid;
 //echo $sql;
     $result = $conn->query($sql);
 
@@ -38,10 +38,9 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["SectionID"]?></td>
-    <td><?=$row["Section.Prefix"]?></td>
-    <td><?=$row["Section.Number"]?></td>
     <td><?=$row["CourseID"]?></td>
+    <td><?=$row["Course.Prefix"]?></td>
+    <td><?=$row["Course.Number"]?></td>
     <td><?=$row["InstructorID"]?></td>
   </tr>
 <?php
