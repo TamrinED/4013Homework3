@@ -36,6 +36,10 @@ if ($result->num_rows > 0) {
     <td><?=$row["FirstName"]?></td>
     <td><?=$row["LastName"]?></td>
   </tr>
+    <form method="post" action="instructor-course.php">
+        <input type="hidden" name="CourseID" value="<?=$row["CourseID"]?>" />
+        <input type="submit" value="Courses" />
+      </form>
 <?php
   }
 } else {
