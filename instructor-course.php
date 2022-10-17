@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
   <tr>
     <td><?=$row["CourseID"]?></td>
     <td><?=$row["Prefix"]?></td>
-    <td><?=$row["Number"]?></td>
+    <td><a href="course-section.php?id=<?=$row["Number"]?>"><?=$row["Number"]?></td>
     <td><?=$row["InstructorID"]?></td>
   </tr>
 <?php
