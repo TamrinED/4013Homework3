@@ -8,8 +8,7 @@
       <th>ID</th>
       <th>Prefix</th>
       <th>Number</th>
-      <th>Course</th>
-      <th>Instructor</th>
+      <th>CourseID</th>
     </tr>
   </thead>
   <tbody>
@@ -27,8 +26,8 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['id'];
 //echo $iid;
-$sql = "SELECT SectionID, Section.Number, Instructor.InstructorID, , c.number 
-FROM section s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where i.instructor_id=" . $iid;
+$sql = "SELECT SectionID, Section.Prefix, Section.CourseID, Section.Number
+FROM section s join course c on c.courseid = s.courseid where c.courseid=" . $iid;
 //echo $sql;
     $result = $conn->query($sql);
 
@@ -37,11 +36,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["section_id"]?></td>
+    <td><?=$row["sectionid"]?></td>
     <td><?=$row["prefix"]?></td>
     <td><?=$row["number"]?></td>
-    <td><?=$row["section_number"]?></td>
-    <td><?=$row["instructor_name"]?></td>
+    <td><?=$row["courseid"]?></td>
   </tr>
 <?php
   }
