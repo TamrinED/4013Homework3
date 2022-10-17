@@ -38,10 +38,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["CourseID"]?></td>
+    <td><?=$row["Course.CourseID"]?></td>
     <td><?=$row["Course.Prefix"]?></td>
     <td><?=$row["Course.Number"]?></td>
-    <td><?=$row["InstructorID"]?></td>
+    <td><?=$row["Course.InstructorID"]?></td>
   </tr>
 <?php
   }
