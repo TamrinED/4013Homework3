@@ -7,7 +7,8 @@ require_once("header.php")
   <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
+      <th>First Name</th>
+      <th>Last Name</th>
     </tr>
   </thead>
   <tbody>
@@ -24,7 +25,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT InstructorID, LastName from Instructor";
+$sql = "SELECT InstructorID, FirstName, LastName FROM Instructor";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -48,3 +49,4 @@ $conn->close();
     
 <?php
 require_once("footer.php"); ?>
+
