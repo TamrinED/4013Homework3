@@ -24,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM Course";
+$sql = "SELECT Course.CourseID, Course.Prefix, Course.Number FROM Course c Join Section s On c.CourseID=s.CourseID WHERE Section.CourseID = Section.CourseID";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
