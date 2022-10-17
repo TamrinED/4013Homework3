@@ -26,10 +26,10 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-      
+$ciid = $_GET['InstructorID'];      
 //echo $iid;
 $sql = "SELECT CourseID, Course.Prefix, Course.Number, Course.InstructorID
-FROM Course c JOIN Instructor i ON c.InstructorID=i.InstructorID WHERE i.InstructorID= ";
+FROM Course c JOIN Instructor i ON c.InstructorID=i.InstructorID WHERE i.InstructorID=?";
 //WHERE c.InstructorID=i.InstructorID"
 //echo $sql;
     $result = $conn->query($sql);
