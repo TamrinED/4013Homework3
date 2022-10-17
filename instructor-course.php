@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 
 //echo $iid;
 $sql = "SELECT CourseID, Course.Prefix, Course.Number, InstructorID 
-FROM course c join instructor i on i.instructorid = c.instructorid join section s on s.courseid = s.courseid 
+FROM course c join instructor i on i.instructorid = c.instructorid
 WHERE c.InstructorID=i.InstructorID;
 //echo $sql;
     $result = $conn->query($sql);
