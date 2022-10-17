@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><a href="courses.php"id=<?=$row["InstructorID"]?>"><?=$row["InstructorID"]?></td>
+    <td><a href="courses.php?id=<?=$row["InstructorID"]?>"><?=$row["InstructorID"]?></td>
     <td><?=$row["FirstName"]?></td>
     <td><?=$row["LastName"]?></td>
   </tr>
