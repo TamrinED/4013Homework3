@@ -24,7 +24,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT CourseID, Prefix, Number FROM Course";
+$sql = "SELECT CourseID, Prefix, Number FROM Course c JOIN Instructor i ON c.InstructorID=i.InstructorID WHERE Course.InstructorID = Instructor.InstructorID";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["Number"]?></td>
     
       <form method="post" action="course-section.php">
-        <input type="hidden" name="CourseID" value="<?=$row["Course.CourseID"]?>" />
+        <input type="hidden" name="CourseID" value="<?=$row["CourseID"]?>" />
         <input type="submit" value="Sections" />
       </form>
     </td>
