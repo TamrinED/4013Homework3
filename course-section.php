@@ -27,8 +27,8 @@ if ($conn->connect_error) {
 //$iid = $_GET['id'];
 //echo $iid;
 $sql = "SELECT *
-FROM section
-//where c.courseid=" . $iid;
+FROM section";
+
 //echo $sql;
     $result = $conn->query($sql);
 
