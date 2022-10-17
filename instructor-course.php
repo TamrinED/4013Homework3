@@ -25,11 +25,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$cid = $_POST['Instructor.InstructorID'];
+
 //echo $iid;
 $sql = "SELECT CourseID, Course.Prefix, Course.Number, InstructorID 
 FROM course c join instructor i on i.instructorid = c.instructorid join section s on s.courseid = s.courseid 
-WHERE c.InstructorID=" . $cid;
+WHERE c.InstructorID=i.InstructorID;
 //echo $sql;
     $result = $conn->query($sql);
 
