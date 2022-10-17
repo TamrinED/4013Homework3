@@ -38,9 +38,9 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["CourseID"]?></td>
+    <td><a href="course-section.php?id=<?=$row["CourseID"]?>"><?=$row["CourseID"]?></td>
     <td><?=$row["Prefix"]?></td>
-    <td><a href="course-section.php?id=<?=$row["Number"]?>"><?=$row["Number"]?></td>
+    <td><?=$row["Number"]?></td>
     <td><?=$row["InstructorID"]?></td>
   </tr>
 <?php
