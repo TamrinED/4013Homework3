@@ -29,7 +29,7 @@ if ($conn->connect_error) {
 $ciid = $_GET['InstructorID'];      
 //echo $iid;
 $sql = "SELECT CourseID, Course.Prefix, Course.Number, Course.InstructorID
-FROM Course c JOIN Instructor i ON c.InstructorID=i.InstructorID WHERE i.InstructorID=$ciid";
+FROM Course c JOIN Instructor i ON c.InstructorID=i.InstructorID WHERE i.InstructorID=" . $ciid;
 //WHERE c.InstructorID=i.InstructorID"
 //echo $sql;
     $result = $conn->query($sql);
