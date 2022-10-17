@@ -1,5 +1,4 @@
-<?php
-require_once("header.php")
+<?php require_once("header.php"); ?>
 
   <body>
 <h1>Instructors</h1>
@@ -47,6 +46,5 @@ $conn->close();
     </table>
 </body>
     
-<?php
-require_once("footer.php"); ?>
+<?php require_once("footer.php"); ?>
 
