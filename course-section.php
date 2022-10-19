@@ -24,10 +24,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-//$iid = $_GET['id'];
+$iid = $_GET['CourseID'];
 //echo $iid;
-$sql = "SELECT *
-FROM Section";
+$sql = "SELECT SectionID, s.Prefix, s.Number, s.CourseID
+FROM Section s JOIN Course c ON s.CourseID=?" $iid;
 
 //echo $sql;
     $result = $conn->query($sql);
