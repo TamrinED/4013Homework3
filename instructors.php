@@ -8,7 +8,6 @@
       <th>ID</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Courses</th>
     </tr>
   </thead>
   <tbody>
@@ -33,14 +32,15 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["InstructorID"]?></td>
+    <td><?=$row["InstructorID"]?>
+      <form method="post" action="instructor-course.php">
+                <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
+               
+              </form></td>
     <td><?=$row["FirstName"]?></td>
     <td><?=$row["LastName"]?></td>
     <td>
-              <form method="post" action="instructor-course.php">
-                <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
-               
-              </form>
+              
             </td>
   </tr>
 <?php
