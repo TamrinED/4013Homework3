@@ -26,7 +26,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$ciid = $_POST['id'];      
+$ciid = $_POST['<?=$row["InstructorID"]?>'];      
 //echo $iid;
 $sql = "SELECT CourseID, c.Prefix, c.Number, c.InstructorID
 FROM Course c JOIN Instructor i ON c.InstructorID=i.InstructorID WHERE i.InstructorID=" . $ciid;
