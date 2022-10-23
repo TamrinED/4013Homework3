@@ -33,7 +33,13 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["InstructorID"]?></td>
-    <td><a href="instructor-course.php?InstructorID=<?=$row["InstructorID"]?>"><?=$row["FirstName"]?></a></td>
+    <td><a href="?InstructorID=<?=$row["InstructorID"]?>"><?=$row["FirstName"]?></a></td>
+    <td>
+              <form method="post" action="instructor-course.php">
+                <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
+                <input type="submit" value="course" >
+              </form>
+            </td>
     <td><?=$row["LastName"]?></td>
   </tr>
 <?php
