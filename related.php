@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
       <p class="card-text"><ul>
 <?php
     $section_sql = "SELECT i.FirstName 
-    FROM instructor i JOIN Course c on c.InstructorID = i.InstructorID where i.InstructorID=" . $row["InstructorID"];
+    FROM Instructor i JOIN Course c on c.InstructorID = i.InstructorID where i.InstructorID=" . $row["InstructorID"];
     $section_result = $conn->query($section_sql);
     
     while($section_row = $section_result->fetch_assoc()) {
