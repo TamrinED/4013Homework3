@@ -25,7 +25,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT InstructorID, FirstName, LastName FROM Instructor i";
+$sql = "SELECT InstructorID, FirstName, LastName FROM Instructor";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -38,8 +38,8 @@ if ($result->num_rows > 0) {
     <td><?=$row["LastName"]?></td>
     <td>
               <form method="post" action="instructor-course.php">
-                <input type="hidden" name="ciid" value="<?=$row["i.InstructorID"]?>" />
-                <input type="submit" value="Courses" />
+                <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
+               
               </form>
             </td>
   </tr>
