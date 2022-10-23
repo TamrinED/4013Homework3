@@ -16,7 +16,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT i.InstructorID, i.FirstName from Instructor";
+$sql = "SELECT * from Instructor";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
