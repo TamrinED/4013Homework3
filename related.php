@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
    <div class="card">
     <div class="card-body">
       <h5 class="card-title"><?=$row["FirstName"]?> <?=$row["LastName"]?></h5>
-      <p class="card-text"><ol>
+      <p class="card-text"><ul>
 <?php
     $section_sql = "SELECT Prefix, Number
     FROM Instructor i JOIN Course c on c.InstructorID = i.InstructorID where i.InstructorID=" . $row["InstructorID"];
@@ -36,7 +36,7 @@ if ($result->num_rows > 0) {
       echo "<li>" . $section_row["Prefix"] . " " . $section_row["Number"] . "</li>";
     }
 ?>
-      </ol></p>
+      </ul></p>
   </div>
     </div>
 <?php
