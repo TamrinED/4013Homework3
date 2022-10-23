@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
     <td><?=$row["LastName"]?></td>
     <td>
               <form method="post" action="instructor-course.php">
-                <input type="hidden" name="id" value="<?=$row["CourseID"]?>" />
+                <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
                 <input type="submit" value="Courses" />
               </form>
             </td>
