@@ -8,6 +8,7 @@
       <th>ID</th>
       <th>First Name</th>
       <th>Last Name</th>
+      <th>Courses</th>
     </tr>
   </thead>
   <tbody>
@@ -33,14 +34,14 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["InstructorID"]?></td>
-    <td><a href="?InstructorID=<?=$row["InstructorID"]?>"><?=$row["FirstName"]?></a></td>
+    <td><?=$row["FirstName"]?></td>
+    <td><?=$row["LastName"]?></td>
     <td>
               <form method="post" action="instructor-course.php">
                 <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
-                <input type="submit" value="course" >
+                <input type="submit" value="Courses" >
               </form>
             </td>
-    <td><?=$row["LastName"]?></td>
   </tr>
 <?php
   }
