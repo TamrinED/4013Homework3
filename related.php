@@ -5,9 +5,9 @@
 <div class="card-group">
     <?php
 $servername = "localhost";
-$username = "projecto_homework3";
-$password = "0w_zeP}]OVy0";
-$dbname = "projecto_homework3";
+$username = "tamrined_suser";
+$password = "(_y)XTDI)NmV";
+$dbname = "tamrined_4013Homework3";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
