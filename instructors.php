@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 ?>
   <tr>
-    <td><?=$row["InstructorID"]?>
+    <td>
       <form method="post" action="instructor-course.php">
                 <input type="submit" name="ciid" value="<?=$row["InstructorID"]?>" />
                
