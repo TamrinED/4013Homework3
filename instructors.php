@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
     <td>
               <form method="post" action="instructor-course.php">
                 <input type="hidden" name="ciid" value="<?=$row["InstructorID"]?>" />
-                <input type="submit" value="Courses" >
+                <input type="submit" value="Courses" />
               </form>
             </td>
   </tr>
