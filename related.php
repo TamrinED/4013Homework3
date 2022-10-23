@@ -25,10 +25,10 @@ if ($result->num_rows > 0) {
 ?>
    <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><?=$row["FirstName"]?></h5>
+      <h5 class="card-title"><?=$row["FirstName"]?> . <?=$row["LastName"]?></h5>
       <p class="card-text"><ul>
 <?php
-    $section_sql = "SELECT i.FirstName 
+    $section_sql = "SELECT Prefix 
     FROM Instructor i JOIN Course c on c.InstructorID = i.InstructorID where i.InstructorID=" . $row["InstructorID"];
     $section_result = $conn->query($section_sql);
     
